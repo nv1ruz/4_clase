@@ -9,9 +9,6 @@
 		<li class="nav-item">
 		  <a class="nav-link" [ngClass]="{'active': itemSeleccionado == 'detalles-item'}"  (click)="seleccionarItem('detalles-item')">Detalles de superheroe</a>
 		</li>
-		<li class="nav-item">
-		  <a class="nav-link" [ngClass]="{'active': itemSeleccionado == '3'}"  (click)="seleccionarItem('3')">Item 3</a>
-		</li>
 	</ul>
 
 	<div *ngIf="itemSeleccionado == 'superheroes-item'">
@@ -19,12 +16,13 @@
             <div class="col-sm-6 mb-2" *ngFor="let superheroe of superheroes; let i = index">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">{{ superheroe.nombre }}</h5>
-                  <p class="card-text">{{ superheroe.descripcion }}</p>
-                  <button class="btn btn-primary" [ngClass]="{'btn-success': indexSuperheroeSeleccionado == i}" (click)="indexSuperheroeSeleccionado = i" [disabled]="indexSuperheroeSeleccionado == i">
-                      <span *ngIf="indexSuperheroeSeleccionado !== i">Seleccionar</span>
-                      <span *ngIf="indexSuperheroeSeleccionado == i">Elegido</span>
-                  </button>
+                    <img src="{{ superheroe.imagen_url }}" class="card-img-top" alt="imagen + {{ superheroe.nombre }}">
+                    <h5 class="card-title">{{ superheroe.nombre }}</h5>
+                    <!-- <p class="card-text">{{ superheroe.descripcion }}</p> -->
+                    <button class="btn btn-primary" [ngClass]="{'btn-success': indexSuperheroeSeleccionado == i}" (click)="indexSuperheroeSeleccionado = i" [disabled]="indexSuperheroeSeleccionado == i">
+                        <span *ngIf="indexSuperheroeSeleccionado !== i">Seleccionar</span>
+                        <span *ngIf="indexSuperheroeSeleccionado == i">Elegido</span>
+                    </button>
                 </div>
               </div>
             </div>
@@ -32,7 +30,17 @@
 	</div>
 
     <div *ngIf="itemSeleccionado == 'detalles-item'">
-        
+        <div class="card">
+            <div class="card-header">
+              Personaje elegido
+            </div>
+            <div class="card-body">
+                <img src="{{ superheroes[indexSuperheroeSeleccionado].imagen_url }}" class="card-img-top" alt="imagen + {{ superheroes[indexSuperheroeSeleccionado].nombre }}">
+              <h5 class="card-title">{{ superheroes[indexSuperheroeSeleccionado].nombre }}</h5>
+              <p class="card-text">{{ superheroes[indexSuperheroeSeleccionado].descripcion }}</p>
+              <a href="#" class="btn btn-primary">Volver</a>
+            </div>
+          </div>
     </div>
 	
 </div>
