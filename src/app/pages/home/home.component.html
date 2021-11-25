@@ -1,1 +1,30 @@
-<p>home works!</p>
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+	
+	<ul class="nav nav-tabs mt-3">
+		<li class="nav-item">
+		  <a class="nav-link" [ngClass]="{'active': itemSeleccionado == 'superheroes-item'}" (click)="seleccionarItem('superheroes-item')">Superheroes</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" [ngClass]="{'active': itemSeleccionado == '2'}"  (click)="seleccionarItem('2')">Item 2</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" [ngClass]="{'active': itemSeleccionado == '3'}"  (click)="seleccionarItem('3')">Item 3</a>
+		</li>
+	</ul>
+
+	<div *ngIf="itemSeleccionado == 'superheroes-item'">
+        <div class="row">
+            <div class="col-sm-6 mb-2" *ngFor="let superheroe of superheroes">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{ superheroe.nombre }}</h5>
+                  <p class="card-text">{{ superheroe.descripcion }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+	
+</div>
