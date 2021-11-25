@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
       descripcion: 'Se trata de un superhéroe que emplea sus habilidades sobrehumanas, reminiscentes de una araña, para combatir a otros supervillanos que persiguen fines siniestros.'
     },
   ];
+  public indexSuperheroeSeleccionado: number = -1;
 
 
   constructor() { }
