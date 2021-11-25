@@ -35,6 +35,11 @@ export class HomeComponent implements OnInit {
 			nombre: 'Spider-man',
 			descripcion: 'Se trata de un superhéroe que emplea sus habilidades sobrehumanas, reminiscentes de una araña, para combatir a otros supervillanos que persiguen fines siniestros.'
 		},
+		{
+			imagen_url: 'https://i1.wp.com/codigoespagueti.com/wp-content/uploads/2021/01/Estreno-Flash-1.jpg?fit=1280%2C720&quality=80&ssl=1',
+			nombre: 'The Flash',
+			descripcion: 'Flash (conocido también como The Flash y traducido en español: Destello) es el nombre de varios superhéroes ficticios que aparecen en los cómics estadounidenses publicados por DC Comics. Creado por el escritor Gardner Fox y el artista Harry Lampert, el "Flash" original apareció por primera vez en Flash Comics #1 (fecha de portada de enero de 1940 / mes de noviembre de 1939).'
+		},
 	];
 
 	constructor() { }
